@@ -10,18 +10,17 @@
 
 Example:
 ```
-let newLinkedList = new LinkedList();
-newLinkedList.append(10);
-newLinkedList.append(2);
-newLinkedList.append(8);
-
-newLinkedList.prependReplace(1);
+const newLinkedList = new linkedLists.make();
+newLinkedList.autoAppend(10);
+const test = new linkedLists.find(newLinkedList, 4).kthFromEnd();
+console.log(test); // 8
 ```
 
 ### Tests Performed with Jest
 - creating a new node with Node class. Expecting an object.
 - Instantiate new linkedList class. Expecting an object.
-- Create a new linked list and append a value. Should equal 10.
+- Test program returns 18 for kth value of 9.
+- Test program returns 10 for kth value of 5.
 
 ### Installing
 

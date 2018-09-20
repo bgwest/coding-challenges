@@ -26,15 +26,13 @@ linkedLists.make = class LinkedList {
     this.data.length = this.data.length + 1;
     return this;
   }
-};
 
-//! Ben - uncomment for testing and debugging
-let newLinkedList = new linkedLists.make();
-newLinkedList.append(10);
-newLinkedList.append(2);
-newLinkedList.append(8);
-newLinkedList.append(1);
-console.log(newLinkedList);
+  autoAppend(value) {
+    for (let i = 0; i < value; i++) {
+      this.append(i * 2);
+    }
+  }
+};
 
 linkedLists.find = class CountList {
   constructor(node, k) {
@@ -43,32 +41,33 @@ linkedLists.find = class CountList {
   }
 
   kthFromEnd() {
-    // replace value/next at tail (null) of list
-    let currentNode = this.node;
-    this.slowest = 0;
-    this.fastest = 0;
-    console.log(currentNode.next.next);
-    while (currentNode.next.value !== undefined) {
-      this.fastest += 2;
-      this.slowest += 1;
+    // replace from the tail (null) of list
+    let currentNode = this.node.head;
+    this.length = 0;
+    // current.next will equal null when you are at the start of the list
+    while (currentNode.next !== null) {
+      this.length += 1;
       currentNode = currentNode.next;
     }
-    this.fastest -= 1;
-    currentNode = this.head;
+    currentNode = this.node.head;
     let stop = 0;
-    while (stop !== this.fastest - this.k) {
+    const here = this.length - this.k;
+    // ensure you cannot give number that makes you extend the list
+    if (here <= -1) {
+      return 'Exception';
+    }
+    while (stop !== here) {
       stop += 1;
       currentNode = currentNode.next;
-    }
-    if (currentNode.value === undefined) {
-      return 'Exception';
     } // else
     return currentNode.value;
   }
 };
 
-//! Ben - testing
-let test = linkedLists.find(newLinkedList, 2).kthFromEnd();
-console.log(test);
+//! Ben - uncomment for a testing example
+// const newLinkedList = new linkedLists.make();
+// newLinkedList.autoAppend(10);
+// const test = new linkedLists.find(newLinkedList, 4).kthFromEnd();
+// console.log(test);
 
 module.exports = linkedLists;
