@@ -1,0 +1,24 @@
+{
+  "name": "ll_merge",
+  "version": "1.0.0",
+  "description": "merge 2 link lists together with list 1 as the head.",
+  "main": "./src/lib/ll_merge.js",
+  "scripts": {
+    "test": "eslint . && jest --coverage",
+    "justJest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgwest/coding-challenges.git"
+  }
+}
