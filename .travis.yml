@@ -1,6 +1,6 @@
 language: node_js
+before_script: cd ./whiteboard/fifo_animal_shelter/
 node_js:
 - "node"
 script:
   - npm test
-before_script: cd ./whiteboard/fifo_animal_shelter/
