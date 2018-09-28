@@ -3,4 +3,4 @@ node_js:
 - "node"
 script:
   - npm test
-before_script: ./whiteboard/fifo_animal_shelter/
+before_script: cd ./whiteboard/fifo_animal_shelter/
