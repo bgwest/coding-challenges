@@ -56,12 +56,7 @@ class Queue {
 
 AnimalShelter = new Queue();
 // uncomment these for testing and or debugging
-// AnimalShelter.enqueue({ type: 'cat', name: 'betsy', placeInLine: AnimalShelter.appointmentNumber });
-// AnimalShelter.enqueue({ type: 'cat', name: 'tom', placeInLine: AnimalShelter.appointmentNumber });
-// AnimalShelter.enqueue({ type: 'dog', name: 'cindy', placeInLine: AnimalShelter.appointmentNumber });
-// AnimalShelter.enqueue({ type: 'dog', name: 'alex', placeInLine: AnimalShelter.appointmentNumber });
-// AnimalShelter.enqueue({ type: 'cat', name: 'paul', placeInLine: AnimalShelter.appointmentNumber });
-// AnimalShelter.enqueue({ type: 'dog', name: 'frank', placeInLine: AnimalShelter.appointmentNumber });
+// format for enqueue: { type: 'cat', name: 'betsy', placeInLine: AnimalShelter.appointmentNumber }
 // AnimalShelter.dequeue('dog');
 
 module.exports = AnimalShelter;
