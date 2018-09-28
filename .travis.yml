@@ -3,6 +3,7 @@ cache:
     - "node_modules"
 before_script: 
 - cd ./whiteboard/fifo_animal_shelter/
+- npm install 
 language: node_js
 node_js:
 - "node"
