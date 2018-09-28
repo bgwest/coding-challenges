@@ -1,6 +1,6 @@
 ![CF](./src/lib/assests/fifo_animal_shelter.JPG) 
 
-[![Build Status](https://travis-ci.com/bgwest/coding-challenges.svg?branch=fifo_animal_shelter)](https://travis-ci.com/bgwest/coding-challenges)
+[![Build Status](https://travis-ci.com/bgwest/coding-challenges.svg?branch=fifo_animal_shelter)
 
 # coding-challenge-12
 ###fifo_animal_shelter
