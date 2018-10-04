@@ -1,0 +1,24 @@
+{
+  "name": "fizz_buzz_tree",
+  "version": "1.0.0",
+  "description": "write a fn() called fizzBuzz that takes a tree as an argument",
+  "main": "./src/lib/fizz_buzz_tree.js",
+  "scripts": {
+    "test": "eslint . && jest --coverage",
+    "justJest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgwest/coding-challenges.git"
+  }
+}
