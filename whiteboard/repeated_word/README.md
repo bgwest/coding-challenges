@@ -1,6 +1,6 @@
 ![CF](./src/lib/assests/repeated_word.JPG) 
 
-[![Build Status](https://travis-ci.com/bgwest/coding-challenges.svg?branch=repeated_word)
+![Build Status](https://travis-ci.com/bgwest/coding-challenges.svg?branch=repeated_word)
 
 ## coding-challenge-27: repeated_word
 
