@@ -103,7 +103,6 @@ function tree_intersection(treeOne, treeTwo) {
       return undefined;
     }
     treeOneMap.set(rootNode.value);
-    // console.log(`Visiting ${root.value}`);
     preOrderTraversalOne(rootNode.left);
     preOrderTraversalOne(rootNode.right);
     return treeOneMap;
@@ -121,9 +120,7 @@ function tree_intersection(treeOne, treeTwo) {
     if (treeOneMap.has(rootNode.value) && !valueCompareObj[`${rootNode.value}`]) {
       valueCompareObj[`${rootNode.value}`] = rootNode.value;
     }
-    
-    treeOneMap.set(rootNode.value);
-    // console.log(`Visiting ${root.value}`);
+
     preOrderTraversalTwo(rootNode.left);
     preOrderTraversalTwo(rootNode.right);
     return valueCompareObj;
