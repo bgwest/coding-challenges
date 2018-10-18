@@ -102,7 +102,6 @@ function tree_intersection(treeOne, treeTwo) {
       // without returning undefined, the recursion would stop at null
       return undefined;
     }
-    console.log(rootNode.value);
     treeOneMap.set(rootNode.value);
     // console.log(`Visiting ${root.value}`);
     preOrderTraversalOne(rootNode.left);
@@ -121,10 +120,8 @@ function tree_intersection(treeOne, treeTwo) {
 
     if (treeOneMap.has(rootNode.value) && !valueCompareObj[`${rootNode.value}`]) {
       valueCompareObj[`${rootNode.value}`] = rootNode.value;
-      console.log(valueCompareObj);
     }
-
-    console.log(rootNode.value);
+    
     treeOneMap.set(rootNode.value);
     // console.log(`Visiting ${root.value}`);
     preOrderTraversalTwo(rootNode.left);
@@ -132,8 +129,8 @@ function tree_intersection(treeOne, treeTwo) {
     return valueCompareObj;
   }
 
-  const finalCompareValues = preOrderTraversalTwo(treeTwo);
-  console.log(finalCompareValues);
+  return preOrderTraversalTwo(treeTwo);
 }
 
-tree_intersection(treeUno.root, treeDos.root);
+const finalCompareValues = tree_intersection(treeUno.root, treeDos.root);
+console.log(finalCompareValues);
