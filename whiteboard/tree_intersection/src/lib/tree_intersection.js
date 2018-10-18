@@ -175,6 +175,6 @@ treeIntersection.functions.tree_intersection = tree_intersection;
 
 // uncomment for debugging or testing
 // const finalCompareValues = tree_intersection(treeUno.root, treeDos.root);
-// console.log(finalCompareValues);
+// console.log(finalCompareValues); // { '4': 4, '7': 7, '11': 11, '19': 19 }
 
 module.exports = treeIntersection;
