@@ -22,36 +22,18 @@ write a fn() called tree_intersection that takes two binary trees as parameters 
 
 Examples
 
-[x] normal run
+[x] run tree_intersection to compare created trees
 ```
-const normalRun = fizzBuzz.runTraversal(tree, 0);
-console.log(countTheFizzBuzz);
-```
-
-[x] countTheFizz
-```
-const countTheFizz = fizzBuzz.tests.findFizzBuzz(tree, { type: 'fizz', counter: 0});
-console.log(countTheFizz);
-```
-
-[x] countTheBuzz
-```
-const countTheBuzz = fizzBuzz.tests.findFizzBuzz(tree, { type: 'buzz', counter: 0});
-console.log(countTheBuzz);
-```
-
-[x] countTheFizzBuzz
-```
-const countTheFizzBuzz = fizzBuzz.tests.findFizzBuzz(tree, { type: 'fizzbuzz', counter: 0});
-console.log(countTheFizzBuzz);
+const finalCompareValues = tree_intersection(treeUno.root, treeDos.root);
+console.log(finalCompareValues); // { '4': 4, '7': 7, '11': 11, '19': 19 }
 ```
 
 *NOTE: uncomment out debugging section in code to run tests as well.*
 
 ### Tests Performed with Jest
-- test for the correct amount of fizzes
-- test for the correct amount of buzzes
-- test for the correct amount of fizzbuzzes
+- test that returned object is blank when no matches are found
+- test that returned object first value is 4 when compared to object with matches
+- test that returned object second value is 7 when compared to object with matches
 
 ### Installing
 
@@ -59,7 +41,7 @@ To use this in your code:
 
 - git clone repo 
 - npm install 
-- require('../src/lib/fizz_buzz_tree');
+- require('../src/lib/tree_intersection');
 
 ## Built With
 
