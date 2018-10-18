@@ -1,0 +1,24 @@
+{
+  "name": "tree_intersection",
+  "version": "1.0.0",
+  "description": "write a fn() called tree_intersection that takes two binary trees as parameters and returns a set of values found in both trees.",
+  "main": "./src/lib/tree_intersection.js",
+  "scripts": {
+    "test": "eslint . && jest --coverage",
+    "justJest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgwest/coding-challenges.git"
+  }
+}
