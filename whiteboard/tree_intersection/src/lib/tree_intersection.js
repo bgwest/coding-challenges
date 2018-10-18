@@ -71,13 +71,13 @@ const D = new TreeConstructors.Node(4);
 //  construct the binary treeTwo
 
 //  visual representation of treeTwo
-//                    10
+//                    11
 //                   /  \
 //                 12    17
 //                /     / \
 //               14   18   22
 //              /    /      \
-//            16    20      31
+//            19    7        4
 A.left = twelve;
 twelve.left = fourteen;
 fourteen.left = B;
@@ -87,9 +87,40 @@ eighteen.left = C;
 seventeen.right = twentytwo;
 twentytwo.right = D;
 
+// binary node treeThree
+// all different values to test 'null compare'
+const E = new TreeConstructors.Node(10);
+const F = new TreeConstructors.Node(12);
+const G = new TreeConstructors.Node(14);
+const H = new TreeConstructors.Node(26);
+const I = new TreeConstructors.Node(17);
+const J = new TreeConstructors.Node(18);
+const K = new TreeConstructors.Node(29);
+const L = new TreeConstructors.Node(22);
+const M = new TreeConstructors.Node(32);
+
+//  construct the binary treeThree
+
+//  visual representation of treeThree
+//                    10
+//                   /  \
+//                 12    17
+//                /     / \
+//               14   18   22
+//              /    /      \
+//            26    29      32
+E.left = F;
+F.left = G;
+G.left = H;
+E.right = I;
+I.left = J;
+J.left = K;
+I.right = L;
+L.right = M;
 
 const treeUno = new TreeConstructors.BinaryTree(eleven);
 const treeDos = new TreeConstructors.BinaryTree(A);
+const treeTres = new TreeConstructors.BinaryTree(E);
 
 function tree_intersection(treeOne, treeTwo) {
   const treeOneMap = new Map();
@@ -108,7 +139,7 @@ function tree_intersection(treeOne, treeTwo) {
     return treeOneMap;
   }
 
-  const treeOneValues = preOrderTraversalOne(treeOne);
+  preOrderTraversalOne(treeOne);
 
   function preOrderTraversalTwo(rootNode) {
     if (!rootNode) {
@@ -129,5 +160,21 @@ function tree_intersection(treeOne, treeTwo) {
   return preOrderTraversalTwo(treeTwo);
 }
 
-const finalCompareValues = tree_intersection(treeUno.root, treeDos.root);
-console.log(finalCompareValues);
+// exports for testing
+const treeIntersection = {};
+
+// store trees for testing
+treeIntersection.trees = {};
+treeIntersection.trees.treeUno = treeUno;
+treeIntersection.trees.treeDos = treeDos;
+treeIntersection.trees.treeTres = treeTres;
+
+// store functions for testing
+treeIntersection.functions = {};
+treeIntersection.functions.tree_intersection = tree_intersection;
+
+// uncomment for debugging or testing
+// const finalCompareValues = tree_intersection(treeUno.root, treeDos.root);
+// console.log(finalCompareValues);
+
+module.exports = treeIntersection;

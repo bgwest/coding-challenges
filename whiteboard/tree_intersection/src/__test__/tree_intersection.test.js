@@ -1,18 +1,24 @@
 'use strict';
 
-const fizzBuzz = require('../lib/binary-tree');
+const treeInsertion = require('../lib/tree_intersection');
 
-describe('testing binary-tree.js', () => {
-  test('with current tree, fizz count should = 2', () => {
-    const countTheFizz = fizzBuzz.tests.findFizzBuzz(fizzBuzz.tree, { type: 'fizz', counter: 0 });
-    expect(countTheFizz.counter).toEqual(2);
+describe('testing tree_insertion.js', () => {
+  test('test that returned object is blank when no matches are found', () => {
+    const testTreeInsertion = treeInsertion.functions
+      .tree_intersection(treeInsertion.trees.treeUno.root,
+        treeInsertion.trees.treeTres.root);
+    expect(testTreeInsertion).toEqual({});
   });
-  test('with current tree, buzz count should = 1', () => {
-    const countTheBuzz = fizzBuzz.tests.findFizzBuzz(fizzBuzz.tree, { type: 'buzz', counter: 0 });
-    expect(countTheBuzz.counter).toEqual(1);
+  test('test that returned object first value is 4 when compared to object with matches', () => {
+    const testTreeInsertion = treeInsertion.functions
+      .tree_intersection(treeInsertion.trees.treeUno.root,
+        treeInsertion.trees.treeDos.root);
+    expect(testTreeInsertion['4']).toEqual(4);
   });
-  test('with current tree, fizzbuzz count should = 1', () => {
-    const countTheFizzBuzz = fizzBuzz.tests.findFizzBuzz(fizzBuzz.tree, { type: 'fizzbuzz', counter: 0 });
-    expect(countTheFizzBuzz.counter).toEqual(1);
+  test('test that returned object second value is 7 when compared to object with matches', () => {
+    const testTreeInsertion = treeInsertion.functions
+      .tree_intersection(treeInsertion.trees.treeUno.root,
+        treeInsertion.trees.treeDos.root);
+    expect(testTreeInsertion['7']).toEqual(7);
   });
 });
