@@ -56,9 +56,9 @@ console.log(testValidate); // true
 ```
 
 ### Tests Performed with Jest
-- test that a string with valid bracket syntax, should return true
-- need to add
-- need to add
+- test that validStrings[2] returns true
+- test that invalidStrings[0] returns false
+- test that invalidStrings[1] test '1' returns false
 
 ### Installing
 
