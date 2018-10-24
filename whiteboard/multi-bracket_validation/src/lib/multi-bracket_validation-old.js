@@ -27,26 +27,6 @@ class Stack {
   }
 }
 
-// defineParen
-function defineParen(passedParen) {
-  switch (passedParen) {
-    case '(':
-      return { type: 'open', match: ')' };
-    case '{':
-      return { type: 'open', match: '}' };
-    case '[':
-      return { type: 'open', match: ']' };
-    case ')':
-      return { type: 'closed', match: '(' };
-    case '}':
-      return { type: 'closed', match: '{' };
-    case ']':
-      return { type: 'closed', match: '[' };
-    default:
-      return false;
-  }
-}
-
 // buildStack
 function buildStack(myStr) {
   const myString = myStr;
@@ -54,11 +34,9 @@ function buildStack(myStr) {
   const spiltMyString = myString.split(''); // O(n)
 
   // O(n)
-  for (let iterateString = spiltMyString.length - 1; iterateString >= 0; iterateString--) {
+  for (let iterateString = 0; iterateString <= spiltMyString.length - 1; iterateString++) {
     const currentValue = spiltMyString[iterateString];
-    const currentParen = defineParen(currentValue);
-    // get all 'open parens e.g. {, (, [
-    if (currentParen.type === 'open') {
+    if (currentValue === '{' || currentValue === '[' || currentValue === '(') {
       builtStack.push(currentValue);
     }
   }
@@ -68,25 +46,37 @@ function buildStack(myStr) {
 // validateBuild
 function validateBuild(destructureInput) {
   const { builtStack, spiltMyString } = destructureInput;
+
   // O(n)
   // loop compare has to go in "opposite direction" because a Stack is LIFO
   for (let iterateString = 0; iterateString <= spiltMyString.length - 1; iterateString++) {
     const currentValue = spiltMyString[iterateString];
-    const currentParen = defineParen(currentValue);
-
-    // get all 'closed parens e.g. }, ), ]
-    if (currentParen.type === 'closed') {
-      const currentStackPeek = builtStack.peek();
-      if (currentStackPeek === currentParen.match) {
-        builtStack.pop();
+    // right, right, right, left -- for each possibility
+    if (currentValue === '}' || currentValue === ']' || currentValue === ')') {
+      if (currentValue === '}') {
+        if (builtStack.peek() !== '}' && builtStack.peek() !== ')' && builtStack.peek() !== ')' && builtStack.peek() !== '{') {
+          return false;
+        }
       }
+      if (currentValue === ']') {
+        if (builtStack.peek() !== ']' && builtStack.peek() !== ')' && builtStack.peek() !== '}' && builtStack.peek() !== '[') {
+          return false;
+        }
+      }
+      if (currentValue === ')') {
+        if (builtStack.peek() !== ')' && builtStack.peek() !== ')' && builtStack.peek() !== ')' && builtStack.peek() !== '(') {
+          return false;
+        }
+      }
+      builtStack.pop();
     }
   }
 
   if (builtStack.stack.length === 0) {
     return true;
-  }
-  // default return
+  } // else
+
+  // return false;
   return false;
 }
 
@@ -118,7 +108,7 @@ multiBracketValidation.testStrings.invalidStrings = invalidStrings;
 
 // uncomment for debugging and testing
 // const testBuild = multiBracketValidation.
-// functions.buildStack(multiBracketValidation.testStrings.validStrings['0']);
+// functions.buildStack(multiBracketValidation.testStrings.validStrings['2']);
 // console.log(testBuild);
 //
 // const testValidate = multiBracketValidation.functions.validateBuild(testBuild);
