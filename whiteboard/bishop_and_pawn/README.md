@@ -18,7 +18,7 @@ Examples
 let chessBoard = bishopAndPawn.functions.createChessBoard
 // place pieces
 chessBoard = bishopAndPawn.functions.placePiece(chessBoard, 'P');
-chessBoard = bishopAndPawn.functions.placePiece(chessBoard, 'B
+chessBoard = bishopAndPawn.functions.placePiece(chessBoard, 'B');
 // find pieces
 const myPawn = bishopAndPawn.functions.findPiece(chessBoard, 'P');
 const myBishop = bishopAndPawn.functions.findPiece(chessBoard, 'B');
