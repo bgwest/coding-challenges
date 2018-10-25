@@ -1,0 +1,24 @@
+{
+  "name": "char_counter",
+  "version": "1.0.0",
+  "description": "write a fn() that takes in 1st argument as a string and returns a letter count of each character.",
+  "main": "src/lib/char_counter.js",
+  "scripts": {
+    "test": "eslint . && jest --coverage",
+    "justJest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgwest/coding-challenges.git"
+  }
+}

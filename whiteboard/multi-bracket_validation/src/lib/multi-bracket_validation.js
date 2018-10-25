@@ -54,46 +54,55 @@ function buildStack(myStr) {
   const spiltMyString = myString.split(''); // O(n)
 
   // O(n)
-  for (let iterateString = spiltMyString.length - 1; iterateString >= 0; iterateString--) {
+  for (let iterateString = 0; iterateString <= spiltMyString.length - 1; iterateString++) {
     const currentValue = spiltMyString[iterateString];
     const currentParen = defineParen(currentValue);
     // get all 'open parens e.g. {, (, [
     if (currentParen.type === 'open') {
       builtStack.push(currentValue);
     }
-  }
-  return { builtStack, spiltMyString };
-}
 
-// validateBuild
-function validateBuild(destructureInput) {
-  const { builtStack, spiltMyString } = destructureInput;
-  // O(n)
-  // loop compare has to go in "opposite direction" because a Stack is LIFO
-  for (let iterateString = 0; iterateString <= spiltMyString.length - 1; iterateString++) {
-    const currentValue = spiltMyString[iterateString];
-    const currentParen = defineParen(currentValue);
-
-    // get all 'closed parens e.g. }, ), ]
     if (currentParen.type === 'closed') {
       const currentStackPeek = builtStack.peek();
       if (currentStackPeek === currentParen.match) {
         builtStack.pop();
+      } else {
+        return false;
       }
     }
   }
-
-  if (builtStack.stack.length === 0) {
-    return true;
-  }
-  // default return
-  return false;
+  return true;
 }
+
+// validateBuild
+// function validateBuild(destructureInput) {
+//   const { builtStack, spiltMyString } = destructureInput;
+//   // O(n)
+//   // loop compare has to go in "opposite direction" because a Stack is LIFO
+//   for (let iterateString = 0; iterateString <= spiltMyString.length - 1; iterateString++) {
+//     const currentValue = spiltMyString[iterateString];
+//     const currentParen = defineParen(currentValue);
+//
+//     // get all 'closed parens e.g. }, ), ]
+//     if (currentParen.type === 'closed') {
+//       const currentStackPeek = builtStack.peek();
+//       if (currentStackPeek === currentParen.match) {
+//         builtStack.pop();
+//       }
+//     }
+//   }
+//
+//   if (builtStack.stack.length === 0) {
+//     return true;
+//   }
+//   // default return
+//   return false;
+// }
 
 // add that fresh function to the export object
 multiBracketValidation.functions = {};
 multiBracketValidation.functions.buildStack = buildStack;
-multiBracketValidation.functions.validateBuild = validateBuild;
+// multiBracketValidation.functions.validateBuild = validateBuild;
 
 const validStrings = {
   0: '{}',
@@ -117,11 +126,10 @@ const invalidStrings = {
 multiBracketValidation.testStrings.invalidStrings = invalidStrings;
 
 // uncomment for debugging and testing
-// const testBuild = multiBracketValidation.
-// functions.buildStack(multiBracketValidation.testStrings.validStrings['0']);
-// console.log(testBuild);
-//
-// const testValidate = multiBracketValidation.functions.validateBuild(testBuild);
-// console.log(testValidate);
+const testBuild = multiBracketValidation.functions.buildStack(multiBracketValidation.testStrings.invalidStrings['2']);
+console.log(testBuild);
+
+const testValidate = multiBracketValidation.functions.validateBuild(testBuild);
+console.log(testValidate);
 
 module.exports = multiBracketValidation;
