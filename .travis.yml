@@ -2,7 +2,7 @@ cache:
   directories:
     - "node_modules"
 before_script: 
-- cd ./whiteboard/bishop_and_pawn/
+- cd ./whiteboard/char_counter/
 - npm install 
 language: node_js
 node_js:
