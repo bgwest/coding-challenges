@@ -106,10 +106,10 @@ reverseLinkedList.functions.loopAndStack = (linkedList) => {
   let currentNode = linkedList.head;
 
   // utilizing getLength method, but could also do this with .next = null
-  let listLength = linkedList.getLength();
+  let listLength = linkedList.getLength(); // O(1)
 
-  while (listLength > 0) {
-    reverseMe.push(currentNode.value);
+  while (listLength > 0) { // O(n)
+    reverseMe.push(currentNode.value); // O(1)
     currentNode = currentNode.next;
     listLength -= 1;
   }
@@ -121,10 +121,10 @@ reverseLinkedList.functions.popAndLink = (fullStack) => {
   const reversedList = new LinkedList();
 
   // initialize list with first value -- add to head
-  reversedList.prepend(fullStack.pop());
+  reversedList.prepend(fullStack.pop()); // O(1)
 
-  while (fullStack.stack[0] !== undefined) {
-    reversedList.append(fullStack.pop());
+  while (fullStack.stack[0] !== undefined) { // O(n)
+    reversedList.append(fullStack.pop()); // O(1)
   }
   return reversedList;
 };
@@ -132,10 +132,11 @@ reverseLinkedList.functions.popAndLink = (fullStack) => {
 
 // uncomment for testing and debugging
 // Reverse Linked List Method # 1 -- Using a stack and a loop
-const reversalWithStackStepOne = reverseLinkedList.functions.loopAndStack(newList);
-console.log(reversalWithStackStepOne);
-const reversalWithStackStepTwo = reverseLinkedList.functions.popAndLink(reversalWithStackStepOne);
-console.log(reversalWithStackStepTwo);
-console.log(reversalWithStackStepTwo.getLength());
+// const reversalWithStackStepOne = reverseLinkedList.functions.loopAndStack(newList);
+// console.log(reversalWithStackStepOne);
+// const reversalWithStackStepTwo = reverseLinkedList.functions
+// .popAndLink(reversalWithStackStepOne);
+// console.log(reversalWithStackStepTwo);
+// console.log(reversalWithStackStepTwo.getLength());
 
 module.exports = reverseLinkedList;

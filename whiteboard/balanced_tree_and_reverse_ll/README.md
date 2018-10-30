@@ -5,23 +5,44 @@
 ## Code Challenge 39: balanced_tree and reverse_ll
 
 ### Objective
-This is a 4 fold challenge that requires writing one script to determine if a binary tree is balance and another script to reverse a linked list in 3 different ways.
+This is a 3 fold challenge that requires writing one script to determine if a binary tree is balance and another script to reverse a linked list in 3 different ways.
 
-#### Edge Cases
-* No matches return null
-* Multiple matches should not set duplicate values in the returned object/array
+### BigO 
+for each "notable function"
 
-#### BigO
+#### balanced_trees.js
 
-##### balanced_trees
+###### recursiveHeightHelper()
 
-- Time: O(N + N + N + H) = O(N)
-- Space: O(N)
+- Time Complexity: O(H)
+- Space Complexity: O(N)
 
-##### reverse_ll
+###### isTreeBalanced()
 
-- Time: O(N + N + N + H) = O(N)
-- Space: O(N)
+- Time Complexity: O(1)
+- Space Complexity: O(2) = O(1)
+
+#### reverse_ll.js
+
+###### LinkedList.prepend()
+
+- Time Complexity: O(1)
+- Space Complexity: O(1)
+
+###### LinkedList.append()
+
+- Time Complexity: O(n)
+- Space Complexity: O(n)
+
+###### reverseLinkedList.functions.loopAndStack()
+
+- Time Complexity: O(n)
+- Space Complexity: O(n)
+
+###### reverseLinkedList.functions.popAndLink()
+
+- Time Complexity: O(n)
+- Space Complexity: O(n)
 
 ### Run Examples
 
@@ -32,16 +53,12 @@ This is a 4 fold challenge that requires writing one script to determine if a bi
 // test for balancedTree
 const getLeftHeight = treeIntersection.functions.calculateHeight(balancedTree.root.left);
 const getRightHeight = treeIntersection.functions.calculateHeight(balancedTree.root.right);
-console.log(getLeftHeight);
-console.log(getRightHeight);
 const testBalance = treeIntersection.functions.isTreeBalanced(getLeftHeight, getRightHeight);
 console.log(testBalance); // true
 
 // test for unBalancedTree
 const getLeftHeightTwo = treeIntersection.functions.calculateHeight(unBlancedTree.root.left);
 const getRightHeightTwo = treeIntersection.functions.calculateHeight(unBlancedTree.root.right);
-console.log(getLeftHeightTwo);
-console.log(getRightHeightTwo);
 const testBalanceTwo = treeIntersection.functions.isTreeBalanced(getLeftHeightTwo, getRightHeightTwo);
 console.log(testBalanceTwo); // false
 ```
@@ -49,7 +66,12 @@ console.log(testBalanceTwo); // false
 #### reverse_ll
 
 ```
-blah
+// original order = 19, 18, 17, 16, 15, 14, 13, 12, 11, 10
+const reversalWithStackStepOne = reverseLinkedList.functions.loopAndStack(newList);
+console.log(reversalWithStackStepOne);
+const reversalWithStackStepTwo = reverseLinkedList.functions.popAndLink(reversalWithStackStepOne);
+console.log(reversalWithStackStepTwo); // 10, 11, 12, 13, 14, 15, 16, 17, 18, 19
+console.log(reversalWithStackStepTwo.getLength()); // 10
 ```
 
 *NOTE: uncomment out debugging section in code to run tests as well.*
@@ -57,14 +79,11 @@ blah
 ### Tests Performed with Jest
 
 #### balanced_tree.js
-- test 1
-- test 2
-- test 3
+- test if balanced tree is balanced (returns TRUE)
+- test if un-balanced tree is indeed un-balanced (returns FALSE)
 
 #### reverse_ll.js
-- test 1
-- test 2
-- test 3
+- test each value is in reverse order from original linked list value set
 
 ### Installing
 
@@ -72,7 +91,7 @@ To use this in your code:
 
 - git clone repo 
 - npm install 
-- require('../src/lib/balanced_tree');
+- require('../src/lib/balanced_tree_and_reverse_ll');
 
 ## Built With
 

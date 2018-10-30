@@ -35,7 +35,7 @@ function runCompare(originalArray, reversedAsStack) {
 }
 
 describe('testing reverse_ll.js', () => {
-  test('test that values arrive in reverse order', () => {
+  test('test each value is in reverse order from original linked list value set', () => {
     const testList = reverseLinkedList.structure.newList;
     const makeStack = reverseLinkedList.functions.loopAndStack(testList);
     const reverseList = reverseLinkedList.functions.popAndLink(makeStack);
