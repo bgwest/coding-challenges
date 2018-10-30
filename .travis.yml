@@ -2,7 +2,7 @@ cache:
   directories:
     - "node_modules"
 before_script: 
-- cd ./whiteboard/char_counter/
+- cd ./whiteboard/balanced_tree_and_reverse_ll/
 - npm install 
 language: node_js
 node_js:

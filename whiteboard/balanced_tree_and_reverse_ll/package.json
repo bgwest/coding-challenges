@@ -1,0 +1,24 @@
+{
+  "name": "balanced_tree_and_reverse_ll",
+  "version": "1.0.0",
+  "description": "this is a 4 fold challenge that requires to write one script to determine if a binary tree is balance. Two, write another script with 3 different ways to reverse a linked list.",
+  "main": "./src/lib/main.js",
+  "scripts": {
+    "test": "eslint . && jest --coverage",
+    "justJest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgwest/coding-challenges.git"
+  }
+}
