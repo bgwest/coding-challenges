@@ -22,7 +22,7 @@ TreeConstructors.Node = Node;
 
 // start - balancedTree
 
-//  visual representation of blanacedTree
+//  visual representation of balancedTree
 //                 3
 //               /   \
 //             9      20
@@ -105,7 +105,6 @@ const unBlancedTree = new TreeConstructors.BinaryTree(threeB);
 
 function isTreeBalanced(leftTree, rightTree) {
   const heightDifference = Math.abs(leftTree - rightTree);
-  console.log(heightDifference);
   if (heightDifference > 1) {
     return false;
   } // else
@@ -123,6 +122,7 @@ let recursiveHeightHelper = (root) => {
   if (root === null) {
     return -1;
   }
+
   if (root.left === null && root.right === null) {
     // if I am a leaf, my height is 0
     return 0;
@@ -161,14 +161,14 @@ treeIntersection.functions.isTreeBalanced = isTreeBalanced;
 // console.log(getRightHeight);
 // const testBalance = treeIntersection.functions.isTreeBalanced(getLeftHeight, getRightHeight);
 // console.log(testBalance); // true
-//
+
 // // test for unBalancedTree
 // const getLeftHeightTwo = treeIntersection.functions.calculateHeight(unBlancedTree.root.left);
 // const getRightHeightTwo = treeIntersection.functions.calculateHeight(unBlancedTree.root.right);
 // console.log(getLeftHeightTwo);
 // console.log(getRightHeightTwo);
-// const testBalanceTwo = treeIntersection.
-// functions.isTreeBalanced(getLeftHeightTwo, getRightHeightTwo);
+// const testBalanceTwo = treeIntersection
+// .functions.isTreeBalanced(getLeftHeightTwo, getRightHeightTwo);
 // console.log(testBalanceTwo); // false
 
 module.exports = treeIntersection;
