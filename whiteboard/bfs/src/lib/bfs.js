@@ -94,9 +94,43 @@ class Graph {
   }
 }
 
-function testPathWasValid() { // eslint-disable-line
-  // go to each set that should end with your start value
+// RECURSIVE FUNCTION
+function testPathWasValid(path, recursiveStartValue, startingVertex) { // eslint-disable-line
+  // recursively determine if the path is valid
+  for (const [key, value] of path) { // eslint-disable-line
+    if (key.value === recursiveStartValue.value) {
+      console.log(key);
+      // BASE CASE
+      if (value === startingVertex) {
+        return { key, value, validPath: true };
+      } // else, call testPathWasValid again
+      testPathWasValid(value);
+    }
+  } // else
+  return false;
+}
 
+function getStartingValue(path, startingVertex, endingVertex) {
+  // get your starting value and then recursively go until key leads to startingVertex
+  for (const [key, value] of path) { // eslint-disable-line
+    if (key.value === endingVertex.value) {
+      return value;
+    }
+  } // else
+  return undefined;
+}
+
+function validatePath(path, startingVertex, endingVertex) {
+  if (path !== null) {
+    const recursiveStartValue = getStartingValue(path, startingVertex, endingVertex);
+    console.log(recursiveStartValue);
+
+    // RECURSIVE FUNCTION -- CALL
+    const isPathValid = testPathWasValid(path, recursiveStartValue, startingVertex);
+    console.log(isPathValid);
+    return isPathValid;
+  } // else
+  return null;
 }
 
 // start -- module exports build
@@ -158,14 +192,18 @@ BFS.classes.Queue = Queue;
 // add -- functions to export
 BFS.functions = {};
 BFS.functions.bfs = bfs;
+BFS.functions.validatePath = validatePath;
 
 // uncomment for testing / debugging
-// console.log(ten);
-// const path = bfs(graphOne, ten, eight);
-// const neighbors = graph.getNeighbors(ten);
+// const startingVertex = ten;
+// console.log(startingVertex);
+// const endingVertex = twelve;
+// const path = bfs(graphOne, startingVertex, endingVertex);
+// const neighbors = graphOne.getNeighbors(ten);
 // console.log(neighbors);
 //
 // console.log('return path:');
 // console.log(path);
+// console.log(validatePath(path, startingVertex, endingVertex));
 
 module.exports = BFS;
