@@ -1,0 +1,28 @@
+{
+  "name": "sorts",
+  "version": "1.0.0",
+  "description": "create files representing the radix_sort and merge_sort algorithms",
+  "main": "./src/lib/sorts.js",
+  "scripts": {
+    "test": "eslint . && jest --coverage",
+    "justJest": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bgwest/coding-challenges.git"
+  },
+  "dependencies": {
+    "queue-fifo": "^0.2.5",
+    "stack-lifo": "^0.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.0.0",
+    "jest": "^23.6.0"
+  }
+}
