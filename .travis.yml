@@ -2,7 +2,7 @@ cache:
   directories:
     - "node_modules"
 before_script: 
-- cd ./whiteboard/radix_sort_and_merge_sort/
+- cd ./whiteboard/reversals/
 - npm install 
 language: node_js
 node_js:
