@@ -3,64 +3,74 @@
 class Node {
   constructor(value) {
     this.value = value;
-    // next is a pointer
     this.next = null;
   }
 }
 
 class LinkedList {
   constructor() {
-    // the head has it's own pointer as well
     this.head = null;
-    this.length = 0;
+    this.data = {
+      length: 0,
+    };
   }
 
+  getLength() {
+    return this.data.length;
+  }
+
+  // 'insert at head' -- add new node to head of list
   prepend(value) {
-    const newNode = new Node(value);
-
-    newNode.next = this.head;
-    this.head = newNode;
-    this.length += 1;
-    return this.head;
+    const node = new Node(value);
+    node.next = this.head;
+    // e.g.
+    // if I wanted to insert 'E' at the head
+    // const node = new linkedListCopy.newNode('E');
+    // node.next = this.head;
+    // [E][next]--->[A][next]--=>[B][next]--->[C][next]--->[D[next]--->NULL
+    // [head] = [E][next]--->[A][next]--=>[B][next]--->[C][next]--->[D[next]--->NULL
+    this.head = node;
+    this.data.length = this.data.length + 1;
+    return this;
   }
 
+  // replace value/next at tail (null) of list
   append(value) {
-    const newNode = new Node(value);
-    let head = this.head;
-
-    while (head.next) {
-      head = head.next;
+    let currentNode = this.head;
+    while (currentNode.next !== null) {
+      currentNode = currentNode.next;
     }
-    head.next = newNode;
-    this.length += 1;
-    return head;
+    const node = new Node(value);
+    currentNode.next = node;
+    this.data.length = this.data.length + 1;
+    return currentNode;
   }
 }
 
-
+// creating a linked list to work with
 const newList = new LinkedList();
 newList.prepend('D');
-newList.prepend('O');
-newList.prepend('G');
+newList.prepend('C');
+newList.prepend('B');
+newList.prepend('A');
 
-console.log(newList);
+function reversingLinkedListIteratively(list) {
+  // setup
+  let currentNode = list.head;
+  let previousNode = null;
+  let nextNode;
+  list.head = previousNode;
 
-// head --> [ 'G' | next ] --> [ 'O' | next ] --> [ 'D' | next ] --> null
-//
-
-function reverseLinkedList(head) {
-  let previous = null;
-  let current = head;
-  let nextRef;
-
-  while (current.next) {
-    nextRef = current.next;
-    current.next = previous;
-    previous = current;
-    current = nextRef;
+  // loop
+  while (currentNode) {
+    nextNode = currentNode.next;
+    currentNode.next = previousNode;
+    previousNode = currentNode;
+    currentNode = nextNode;
   }
-  return current;
+  list.head = previousNode;
+  return list;
 }
 
-const testing = reverseLinkedList(newList.head);
-console.log(testing);
+const reversedLinkedList = reversingLinkedListIteratively(newList);
+console.log(reversedLinkedList);
