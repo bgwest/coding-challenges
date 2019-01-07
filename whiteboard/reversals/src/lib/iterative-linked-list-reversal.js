@@ -23,12 +23,6 @@ class LinkedList {
   prepend(value) {
     const node = new Node(value);
     node.next = this.head;
-    // e.g.
-    // if I wanted to insert 'E' at the head
-    // const node = new linkedListCopy.newNode('E');
-    // node.next = this.head;
-    // [E][next]--->[A][next]--=>[B][next]--->[C][next]--->[D[next]--->NULL
-    // [head] = [E][next]--->[A][next]--=>[B][next]--->[C][next]--->[D[next]--->NULL
     this.head = node;
     this.data.length = this.data.length + 1;
     return this;
@@ -63,11 +57,16 @@ function reversingLinkedListIteratively(list) {
 
   // loop
   while (currentNode) {
+    // save node
     nextNode = currentNode.next;
+    // break link!
     currentNode.next = previousNode;
+    // save broken node into previousNode variable
     previousNode = currentNode;
+    // contains the remaining linked nodes to  to carry on the process
     currentNode = nextNode;
   }
+  // re-attach head to newly reversed links
   list.head = previousNode;
   return list;
 }
