@@ -6,6 +6,10 @@ Ways to reverse data sequences with various data-structures and algorithms.
 
 # Whiteboard of code
 
+### recursive linked list reversal 
+
+![CF](./src/lib/assests/recursive-linked-list-reversal.jpg)
+
 ### iterative reversal of linked list 
 
 ![CF](./src/lib/assests/iterative-reversal-linked-list.jpg) 

@@ -62,6 +62,8 @@ function reverse(head) {
 
   // RECURSIVE CASE
   const remaining = reverse(head.next);
+  console.log('remaining');
+  console.log(remaining);
 
   // stack unwinds
   head.next.next = head;
@@ -70,4 +72,5 @@ function reverse(head) {
 }
 
 const reversedList = reverse(newList.head);
+newList.head = reversedList;
 console.log(reversedList);
