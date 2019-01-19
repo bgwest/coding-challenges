@@ -2,7 +2,7 @@
 
 ## Code Challenge ACF2: Stacks
 
-Varies problems about stacks or using stacks
+Various problems about stacks or using stacks
 
 # Whiteboard
 

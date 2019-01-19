@@ -1,7 +1,7 @@
 {
   "name": "stacks",
   "version": "1.0.0",
-  "description": "Whiteboard problems, all about stacks.",
+  "description": "Various problems about stacks or using stacks",
   "main": "./src/lib/main.js",
   "scripts": {
     "test": "eslint . && jest --coverage",
