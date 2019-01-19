@@ -1,3 +1,8 @@
-# coding-challenges
+# Coding-challenges
 
-a series of white board challenges were first performed on a white board and then replicated and organized on a computer.
+### Objective
+
+A series of problems solved in various ways and efficiencies using various data structures and algorithms.
+
+#### Author
+Benjamin West
