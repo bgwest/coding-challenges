@@ -21,5 +21,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bgwest/coding-challenges.git"
-  }
+  },
+  "dependencies": {}
 }
