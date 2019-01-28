@@ -6,6 +6,9 @@ Various problems about stacks or using stacks
 
 # Whiteboard
 
+### sort stack
+![CF](./src/lib/assests/sort_stack_WB.jpg)
+
 ### reversal of linked list with a stack
 
 ![CF](./src/lib/assests/reverse-linked-list-with-stack.jpg) 
@@ -22,7 +25,7 @@ Various problems about stacks or using stacks
 
 ###### sort-stack.js
 
-*coming soon*
+- test if stack is reversed as expected
 
 #### Installing
 
