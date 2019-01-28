@@ -33,19 +33,8 @@ class Stack {
     return this.stack[this.stack.length - 1];
   }
 
-  sortStack(stackOne) {
-    console.log(stackOne.stack);
-    // new empty stack
-    const stackTwo = new Stack();
-    stackTwo.push(stackOne.peek());
-    while (!this.isEmpty()) {
-      console.log(stackOne.pop());
-    }
-    return stackOne;
-  }
-
   isEmpty() {
-    if (!this.stack[this.stack.length - 1]) {
+    if (!this.stack[0]) {
       return true;
     } // else
     return false;
@@ -59,4 +48,24 @@ const myStack = new Stack();
   myStack.push(elem);
 });
 
-myStack.sortStack(myStack);
+function finalSort(s1, s2) {
+  while (!s2.isEmpty()) {
+    s1.push(s2.pop());
+  }
+  return s1;
+}
+
+function sortStack(stackOne) {
+  // new empty stack
+  const stackTwo = new Stack();
+  stackTwo.push(stackOne.pop());
+  while (!stackOne.isEmpty()) {
+    console.log(stackOne.isEmpty());
+    stackTwo.push(stackOne.pop());
+  }
+  console.log(stackOne.isEmpty());
+  return finalSort(stackOne, stackTwo);
+}
+
+const sortedStack = sortStack(myStack);
+console.log(sortedStack.stack);
