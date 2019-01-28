@@ -189,3 +189,5 @@ const spiral = new SpiralMatrix(7);
 console.log(spiral.endingInt);
 spiral.main();
 console.log(spiral.matrix);
+
+module.exports = SpiralMatrix;
