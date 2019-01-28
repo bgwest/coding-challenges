@@ -30,7 +30,8 @@ class Stack {
   }
 
   peek() {
-    return this.stack[this.stack.length - 1];
+    // ensure we are dealing with a number
+    return Number(this.stack[this.stack.length - 1]);
   }
 
   isEmpty() {
@@ -41,31 +42,56 @@ class Stack {
   }
 }
 
-const myStack = new Stack();
+const stackOne = new Stack();
 // this push method does not accept comma separated entries
 // creating simple look to iterate and push
-[20, 21, 22, 25, 30, 0, 1].forEach((elem) => {
-  myStack.push(elem);
+// test case 1
+[1, 0, 20, 3, 2, 5].forEach((elem) => {
+  stackOne.push(elem);
 });
 
-function finalSort(s1, s2) {
-  while (!s2.isEmpty()) {
-    s1.push(s2.pop());
+// test case 2
+// [20, 21, 22, 25, 30, 0, 1].forEach((elem) => {
+//   stackOne.push(elem);
+// });
+
+function finalSort(s2) {
+  // s2.isEmpty method was not working... had to use .length on stack property
+  // to get this while moving... loop back later to solve why
+  while (s2.stack.length > 0) {
+    stackOne.push(s2.pop());
   }
-  return s1;
+  return stackOne;
 }
 
-function sortStack(stackOne) {
-  // new empty stack
+function sortStack() {
+  if (stackOne.isEmpty()) {
+    // end program if stackOne is null
+    return null;
+  }
   const stackTwo = new Stack();
-  stackTwo.push(stackOne.pop());
+  let current = stackOne.pop();
+  stackTwo.push(current);
   while (!stackOne.isEmpty()) {
-    console.log(stackOne.isEmpty());
-    stackTwo.push(stackOne.pop());
+    current = stackOne.pop();
+    while (current !== null) {
+      if (current < stackTwo.peek()) {
+        stackOne.push(stackTwo.pop());
+      }
+      // had to use the actual array property[0] and undefined... isEmpty() was
+      // firing incorrectly ... not sure why
+      if (current > stackTwo.peek() || stackTwo.stack[0] === undefined) {
+        stackTwo.push(current);
+        current = null;
+      }
+    }
   }
-  console.log(stackOne.isEmpty());
-  return finalSort(stackOne, stackTwo);
+  return finalSort(stackTwo);
 }
 
-const sortedStack = sortStack(myStack);
-console.log(sortedStack.stack);
+const SortStack = {};
+SortStack.testCases = {};
+SortStack.testCases.test1 = sortStack().stack;
+console.log(SortStack.testCases.test1);
+
+module.exports = SortStack;
