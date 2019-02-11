@@ -2,7 +2,7 @@ cache:
   directories:
     - "node_modules"
 before_script: 
-- cd ./whiteboard/stacks/
+- cd ./whiteboard/graphs/
 - npm install 
 language: node_js
 node_js:
