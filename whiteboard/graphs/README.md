@@ -8,7 +8,7 @@ Contains but not limited to various problems, search methods, or techniques, abo
 
 ### BFS
 
-![CF](./src/lib/assests/bfs.JPG)
+![CF](./src/lib/assests/bfs.jpg)
 
 ### Jest Tests
 
